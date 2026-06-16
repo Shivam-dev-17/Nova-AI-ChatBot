@@ -1,7 +1,7 @@
 import random
 from responses import responses
 class chatbot:
-  def_init_(self):
+  def def_init_(self):
      self.name="Nova"
   def get_response(self, user_input):
     
