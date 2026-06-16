@@ -1,19 +1,23 @@
 import random
+
 from responses import responses
-class chatbot:
-  def_init_(self):
-     self.name="Nova"
-  def get_response(self, user_input):
-    
+
+class ChatBot:
+
+    def __init__(self):
+
+        self.name = "Nova"
+
+    def get_response(self, user_input):
         user_input = user_input.lower().strip()
 
-       #greetings
-       if user_input in ["hello", "hi", "hey"]:
+        # Greeting
+        if user_input in ["hello", "hi", "hey"]:
 
             return random.choice(
                 responses["greeting"]
             )
-
+          
         # Asking bot condition
         elif "how are you" in user_input:
 
@@ -27,7 +31,7 @@ class chatbot:
             return random.choice(
                 responses["name"]
             )
-          
+
         # Thanks
         elif "thank" in user_input:
 
