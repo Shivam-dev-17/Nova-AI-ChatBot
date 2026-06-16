@@ -1,19 +1,16 @@
 from chatbot import ChatBot
 
-bot=ChatBot()
+bot = ChatBot()
 
-print("-"*30)
+print("-"*40)
 print("🤖 Nova AI Chatbot")
-print("Type 'exit' to Stop")
-print("-"*30)
+print("Type 'exit' to stop")
+print("-"*40)
 
 while True:
-  user_input=input("\nYou: ")
-
-if user_input.lower()=="exit":
-  print("Bot: Goodbye Folk!")
-  break
-  
-response = bot.get_response(user_input)
-
-print("Bot:", response)
+    user_input = input("\nYou: ")
+    if user_input.lower()=="exit":
+        print("Bot: Goodbye Folk!")
+        break
+    response = bot.get_response(user_input)
+    print("Bot:", response)
