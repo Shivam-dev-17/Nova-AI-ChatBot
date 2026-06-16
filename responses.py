@@ -1,8 +1,8 @@
 responses={
-  "greetings":["Hello! How can I help you?",
+  "greeting":["Hello! How can I help you?",
                 "Hi there! Nice to meet you.",
                 "Hey! What can I do for you?",
-                "How you Doin?"]
+                "How you Doin?"],
   "how_are_you": ["I am doing great..as always!",
                   "I am running smoothly!",
                   "I am ready to assist you."],
