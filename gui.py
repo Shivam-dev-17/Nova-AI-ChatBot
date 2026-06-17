@@ -3,10 +3,15 @@ import tkinter as tk
 from chatbot import ChatBot
 
 class ChatBotGUI:
+
     def __init__(self):
-        self.BOT = ChatBot()
+
+        self.bot = ChatBot()
+        
         self.window = tk.Tk()
+
         self.window.title("Nova AI Assistant")
+
         self.window.geometry("500x600")
 
         self.chat_box = tk.Text(
@@ -15,11 +20,11 @@ class ChatBotGUI:
             width=60
         )
 
-         self.chat_box.pack(
+        self.chat_box.pack(
             padx=10,
             pady=10
         )
-         
+
         self.user_input = tk.Entry(
             self.window,
             width=40
@@ -41,15 +46,16 @@ class ChatBotGUI:
             side=tk.RIGHT,
             padx=10
         )
+
         self.window.bind(
             "<Return>",
             lambda event: self.send_message()
         )
 
-        def send_message(self):
+    def send_message(self):
         message = self.user_input.get()
+        if message.strip() == "":
 
-        if message.strip()=="":
             return
 
         self.chat_box.insert(
@@ -67,5 +73,7 @@ class ChatBotGUI:
             0,
             tk.END
         )
+
     def start(self):
+
         self.window.mainloop()
