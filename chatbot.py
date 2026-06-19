@@ -1,60 +1,33 @@
 import random
 
-from responses import responses
+from responses import responses, intents
 
+from nlp_engine import tokenize
 
 class ChatBot:
 
-
     def __init__(self):
 
-        self.name = "Nova"
+        self.name="Nova"
+
+    def get_response(self,user_input):
+
+        words = tokenize(user_input)
+
+        message = " ".join(words)
 
 
-
-    def get_response(self, user_input):
-
-        user_input = user_input.lower().strip()
+        for intent, examples in intents.items():
 
 
-        # Greetings
-
-        if user_input in ["hello", "hi", "hey"]:
-
-            return random.choice(
-                responses["greeting"]
-            )
+            for example in examples:
 
 
-        # Asking bot condition
-
-        elif "how are you" in user_input:
-
-            return random.choice(
-                responses["how_are_you"]
-            )
+                if example in message:
 
 
-        # Asking name
+                    return random.choice(
+                        responses[intent]
+                    )
 
-        elif "your name" in user_input:
-
-            return random.choice(
-                responses["name"]
-            )
-
-
-        # Thanks
-
-        elif "thank" in user_input:
-
-            return random.choice(
-                responses["thanks"]
-            )
-
-
-        # Unknown input
-
-        else:
-
-            return "Sorry, I don't understand that yet."
+        return "Sorry, I don't understand that yet."
