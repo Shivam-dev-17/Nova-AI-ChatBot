@@ -15,5 +15,19 @@ responses={
         "Take care!" ]
 
 }
-  
-  
+intents={ "greeting":["hello","hi","hey",
+          "good morning","good evening"],
+         "name":["your name",
+                 "who are you",
+                 "what are you"],
+
+"thanks":["thank you",
+         "thanks"],
+         
+"bye":["bye",
+       "exit",
+       "goodbye"]
+}
+
+         
+
